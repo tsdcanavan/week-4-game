@@ -13,6 +13,7 @@ var crystalNumber = 0;
 var winCount = 0;
 var loseCount = 0;
 var crystalButton;
+var crystalValues = [];
 
 
 
@@ -32,56 +33,16 @@ function initialLoad() {
 
 
 // crystalLoad() {
-// Assign a random number to each of the 4 crystals and add the button to the screen
+// Assign random number to each crystal
   crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
-  crystalButton = $("<button>");
-  crystalButton.attr("value", crystalNumber);
-  crystalButton.attr("id", "button-1")
-  crystalButton.addClass("btn btn-primary number tc-btn");
-  $("#buttons").html(crystalButton);
-
+  crystalValues[1] = crystalNumber 
   crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
-  crystalButton = $("<button>");
-  crystalButton.attr("value", crystalNumber);
-  crystalButton.attr("id", "button-2")
-  crystalButton.addClass("btn btn-primary number tc-btn");
-  $("#buttons").append(crystalButton);
-
+  crystalValues[2] = crystalNumber 
   crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
-  crystalButton = $("<button>");
-  crystalButton.attr("value", crystalNumber);
-  crystalButton.attr("id", "button-3")
-  crystalButton.addClass("btn btn-primary number tc-btn");
-  $("#buttons").append(crystalButton);
-
+  crystalValues[3] = crystalNumber 
   crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
-  crystalButton = $("<button>");
-  crystalButton.attr("value", crystalNumber);
-  crystalButton.attr("id", "button-4")
-  crystalButton.addClass("btn btn-primary number tc-btn");
-  $("#buttons").append(crystalButton);
-
-// Add the image to each button, this will need some logic cleanup to do with less code
-  crystalButton = $("<img>");
-  crystalButton.attr("src", "assets/images/crystal1.jpg");
-  crystalButton.attr("alt", "crystal image");
-  $("#button-1").html(crystalButton);  
-
-  crystalButton = $("<img>");
-  crystalButton.attr("src", "assets/images/crystal2.jpg");
-  crystalButton.attr("alt", "crystal image");
-  $("#button-2").html(crystalButton);  
-
-  crystalButton = $("<img>");
-  crystalButton.attr("src", "assets/images/crystal3.jpg");
-  crystalButton.attr("alt", "crystal image");
-  $("#button-3").html(crystalButton);  
-
-  crystalButton = $("<img>");
-  crystalButton.attr("src", "assets/images/crystal4.jpg");
-  crystalButton.attr("alt", "crystal gayle");
-  $("#button-4").html(crystalButton);  
-
+  crystalValues[4] = crystalNumber 
+  
 // Add the initial score to the screen
   crystalButton = $("<h3>");
   crystalButton.text("Your");
@@ -143,6 +104,54 @@ function initialLoad() {
 
 }
 
+function bldButtons() {
+  // Create buttons
+  crystalButton = $("<button>");
+  crystalButton.attr("value", 1);
+  crystalButton.attr("id", "button-1")
+  crystalButton.addClass("btn btn-primary number tc-btn");
+  $("#buttons").html(crystalButton);
+
+  crystalButton = $("<button>");
+  crystalButton.attr("value", 2);
+  crystalButton.attr("id", "button-2")
+  crystalButton.addClass("btn btn-primary number tc-btn");
+  $("#buttons").append(crystalButton);
+
+  crystalButton = $("<button>");
+  crystalButton.attr("value", 3);
+  crystalButton.attr("id", "button-3")
+  crystalButton.addClass("btn btn-primary number tc-btn");
+  $("#buttons").append(crystalButton);
+
+  crystalButton = $("<button>");
+  crystalButton.attr("value", 4);
+  crystalButton.attr("id", "button-4")
+  crystalButton.addClass("btn btn-primary number tc-btn");
+  $("#buttons").append(crystalButton);
+
+// Add the image to each button, this will need some logic cleanup to do with less code
+  crystalButton = $("<img>");
+  crystalButton.attr("src", "assets/images/crystal1.jpg");
+  crystalButton.attr("alt", "crystal image");
+  $("#button-1").html(crystalButton);  
+
+  crystalButton = $("<img>");
+  crystalButton.attr("src", "assets/images/crystal2.jpg");
+  crystalButton.attr("alt", "crystal image");
+  $("#button-2").html(crystalButton);  
+
+  crystalButton = $("<img>");
+  crystalButton.attr("src", "assets/images/crystal3.jpg");
+  crystalButton.attr("alt", "crystal image");
+  $("#button-3").html(crystalButton);  
+
+  crystalButton = $("<img>");
+  crystalButton.attr("src", "assets/images/crystal4.jpg");
+  crystalButton.attr("alt", "crystal gayle");
+  $("#button-4").html(crystalButton);  
+}
+
 function clear() {
  targetNumber=0;
  userNumber=0;
@@ -150,6 +159,7 @@ function clear() {
 
 }
 
+bldButtons();
 initialLoad();
 
     // Play the game
