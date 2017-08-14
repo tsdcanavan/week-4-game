@@ -177,10 +177,10 @@ initialLoad();
         }
 
         crystalButton = $("<h5>");
-        crystalButton.text("Total Wins:   " + winCount);
+        crystalButton.text("Wins:   " + winCount);
         $("#score-board").html(crystalButton);
         crystalButton = $("<h5>");
-        crystalButton.text("Total Losses: " + loseCount);
+        crystalButton.text("Losses: " + loseCount);
         $("#score-board").append(crystalButton);
 
      });
