@@ -1,0 +1,27 @@
+.tc-jumbotron {
+	height: 8em;
+	background-color: lightblue;
+}
+
+.tc-text-center {
+	margin-top: -30px;
+}
+
+.tc-btn {
+	height: 124px;
+	width: 124px;
+	margin-right: 5px;
+}
+
+img {
+	height: 100px;
+	width: 	100px;
+}
+
+#instructions p {
+  line-height: 	80%;
+}
+
+.panel .panel-heading {
+	background-color: 	lightblue;
+}
