@@ -1,6 +1,13 @@
+body {
+	font-family: 'Sedgwick Ave', 'Sedgwick Ave Display', cursive, sans-serif;
+	background-color: powderblue;
+	background-image: url("../images/crystal-background.jpg");
+}
+
 .tc-jumbotron {
 	height: 8em;
 	background-color: lightblue;
+	font-family: 'Sedgwick Ave Display', cursive, sans-serif;
 }
 
 .tc-text-center {
