@@ -35,13 +35,13 @@ function initialLoad() {
 // crystalLoad() {
 // Assign random number to each crystal
   crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
+  crystalValues[0] = crystalNumber 
+  crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
   crystalValues[1] = crystalNumber 
   crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
   crystalValues[2] = crystalNumber 
   crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
   crystalValues[3] = crystalNumber 
-  crystalNumber=Math.floor(Math.random() * (crystalMax - crystalMin + 1)) + crystalMin;
-  crystalValues[4] = crystalNumber 
   
 // Add the initial score to the screen
   crystalButton = $("<h3>");
@@ -107,25 +107,25 @@ function initialLoad() {
 function bldButtons() {
   // Create buttons
   crystalButton = $("<button>");
-  crystalButton.attr("value", 1);
+  crystalButton.attr("value", 0);
   crystalButton.attr("id", "button-1")
   crystalButton.addClass("btn btn-primary number tc-btn");
   $("#buttons").html(crystalButton);
 
   crystalButton = $("<button>");
-  crystalButton.attr("value", 2);
+  crystalButton.attr("value", 1);
   crystalButton.attr("id", "button-2")
   crystalButton.addClass("btn btn-primary number tc-btn");
   $("#buttons").append(crystalButton);
 
   crystalButton = $("<button>");
-  crystalButton.attr("value", 3);
+  crystalButton.attr("value", 2);
   crystalButton.attr("id", "button-3")
   crystalButton.addClass("btn btn-primary number tc-btn");
   $("#buttons").append(crystalButton);
 
   crystalButton = $("<button>");
-  crystalButton.attr("value", 4);
+  crystalButton.attr("value", 3);
   crystalButton.attr("id", "button-4")
   crystalButton.addClass("btn btn-primary number tc-btn");
   $("#buttons").append(crystalButton);
@@ -165,11 +165,7 @@ initialLoad();
     // Play the game
     $(".btn").on("click", function() {
       var valClicked = $(this).attr("value");
-      console.log("valClicked" + valClicked);
-      userNumber = userNumber + parseInt(valClicked);
-      console.log(targetNumber);
-      console.log("valClicked " + valClicked);
-      console.log("userNumber " + userNumber);
+      userNumber = userNumber + crystalValues[parseInt(valClicked)];
       crystalButton = $("<p>");
       crystalButton.text(userNumber);
       $("#score").html(crystalButton);
@@ -194,6 +190,5 @@ initialLoad();
         $("#score-board").append(crystalButton);
 
      });
-console.log("I'm out of the click function " + userNumber);
 
 });
